@@ -56,7 +56,7 @@ Do the following:
 */
 
 let stringVar = "1999";
-stringVar = parseInt(stringVar);
+stringVar = Number(stringVar);
 console.log(stringVar);
 
 
@@ -120,25 +120,31 @@ Use the hungryDog function and feeding requirements below to do the following:
 */  
 
 function hungryDog(weight, age){
+  // we don't have a calculation for less than 1/6
   if (age < (1/6)) {
     return "Error";
   }
-  if (age >= (1/6) && age < (2/6)){
-    return weight * 0.1;
-  } else if (age < (7/12)) {
-    return weight * 0.05;
-  } else if (age < 1) {
-    return weight * 0.04;
+  // puppy block
+  {
+    if (age >= (1/6) && age < (2/6)){
+      return weight * 0.1;
+    } else if (age < (7/12)) {
+      return weight * 0.05;
+    } else if (age < 1) {
+      return weight * 0.04;
+    }
   }
-
-  if (weight < 6){
-    return weigth * 0.05;
-  } else if (weight < 11) {
-    return weight * 0.04;
-  } else if (weight <= 15) {
-    return weight * 0.03;
-  } else {
-    return weight * 0.02;
+  // adult block
+  {
+    if (weight < 6){
+      return weight * 0.05;
+    } else if (weight < 11) {
+      return weight * 0.04;
+    } else if (weight <= 15) {
+      return weight * 0.03;
+    } else {
+      return weight * 0.02;
+    }
   }
 }
 
@@ -165,11 +171,24 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
+let compGuess = ["rock", "scissors", "paper"][Math.floor(Math.random() * 3)];
+
 function game(user, computer){
+  let win = (user === "rock" && computer === "scissors");
+  win = win || (user === "scissors" && computer === "paper");
+  win = win || (user === "paper" && computer === "rock");
+
+  if (user === computer){
+    return "it's a tie";
+  } else if (win) {
+    return "you win!";
+  } else {
+    return "you lose!";
+  }
     /*add your code here*/
 }
-  
-  
+
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -182,9 +201,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
-  }
+function miles(kilometers){
+  return kilometers * 0.621371;
+}
 
 
 
@@ -196,10 +215,10 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
- 
+function feet(cm){
+  return cm / 30.48;
+}
+
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -212,9 +231,9 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-  }
+function annoyingSong(startingNumber){
+  return `${startingNumber} bottles of soda on the wall, ${startingNumber} bottles of soda, take one down pass it around ${startingNumber - 1} bottles of soda on the wall`;
+}
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -232,11 +251,20 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(score){
+  if (score >= 90){
+    return 'you got an A';
+  } else if (score >= 80){
+    return 'you got a B';
+  } else if (score >= 70){
+    return 'you got a C';
+  } else if (score >= 60){
+    return 'you got a D';
+  } else {
+    return 'you got an F';
   }
-  
-  
+}
+
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
@@ -251,8 +279,14 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+function vowelCounter(inputString) {
+  let counter = 0;
+  for (let character of inputString){
+    if ('aeiou'.includes(character)){
+      counter++;
+    }
+  }
+  return counter;
 }
 
 
