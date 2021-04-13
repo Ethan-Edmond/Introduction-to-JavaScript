@@ -279,13 +279,16 @@ Using the vowelCounter function below do the following:
 
 
 function vowelCounter(inputString) {
-  let counter = 0;
-  for (let character of inputString){
-    if ('aeiou'.includes(character)){
-      counter++;
-    }
-  }
-  return counter;
+  // for (let character of inputString){
+  //   if ('aeiou'.includes(character)){
+  //     counter++;
+  //   }
+  // }
+  // return counter;
+  // let counter = 0;
+
+  // just playing golf
+  return inputString.split("").reduce((a,b) => a + 'aeiou'.includes(b),0);
 }
 
 
