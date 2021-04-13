@@ -165,9 +165,9 @@ Use the game function below to do the following:
    - win should return "you win!"
    - lose should return "you lose!"
    - tie should return "it's a tie"
-  
+
   RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
-  
+
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
@@ -290,7 +290,7 @@ Using the vowelCounter function below do the following:
 
 
 function vowelCounter(inputString) {
-  // for (let character of inputString){
+  // for (let character of inputString.toLowerCase()){
   //   if ('aeiou'.includes(character)){
   //     counter++;
   //   }
@@ -299,7 +299,7 @@ function vowelCounter(inputString) {
   // let counter = 0;
 
   // just playing golf
-  return inputString.split("").reduce((a,b) => a + 'aeiou'.includes(b),0);
+  return inputString.toLowerCase().split("").reduce((a,b) => a + 'aeiou'.includes(b),0);
 }
 
 
