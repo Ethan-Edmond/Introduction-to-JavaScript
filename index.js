@@ -185,7 +185,6 @@ function game(user, computer){
   } else {
     return "you lose!";
   }
-    /*add your code here*/
 }
 
 
@@ -281,9 +280,6 @@ Using the vowelCounter function below do the following:
 
 function vowelCounter(inputString) {
   let counter = 0;
-  if (inputString === ''){
-    return 0;
-  }
   for (let character of inputString){
     if ('aeiou'.includes(character)){
       counter++;
