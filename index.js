@@ -249,7 +249,7 @@ Using the grade function below do the following:
    60-69 should return 'you got a D'
    below should return 'you got an F'
 */
-  
+
 function grade(score){
   if (score >= 90){
     return 'you got an A';
@@ -262,6 +262,17 @@ function grade(score){
   } else {
     return 'you got an F';
   }
+
+  // just playing golf
+  score = '';
+  if(score >= 90){
+    score = "n A";
+  } else if (score < 60){
+    score = "n F";
+  } else {
+    score = [" B"," C"," D"][Math.floor((score / 10) - 6)];
+  }
+  return `you got a${score}`;
 }
 
 
