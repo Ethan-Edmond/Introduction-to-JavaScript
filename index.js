@@ -185,6 +185,12 @@ function game(user, computer){
   } else {
     return "you lose!";
   }
+
+  // just playing golf
+  // golf idea 1
+  if (user === computer) return "it's a tie";
+  let ary = [user, computer].map((a)=> ["rock", "scissors", "paper"].indexOf(a));
+  return (((((ary[1] - ary[0]) % 3) + 3) % 3) === 1) ? "you win!" : "you lose!";
 }
 
 
