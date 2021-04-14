@@ -230,8 +230,13 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
+
 function annoyingSong(startingNumber){
   return `${startingNumber} bottles of soda on the wall, ${startingNumber} bottles of soda, take one down pass it around ${startingNumber - 1} bottles of soda on the wall`;
+}
+// return kicks us out of the function, so our for loop needs to go outside;
+for (let i = 99; i> 0; i--){
+  console.log(annoyingSong(i));
 }
 
 
