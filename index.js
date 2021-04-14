@@ -269,15 +269,9 @@ function grade(score){
   }
 
   // just playing golf
-  score = '';
-  if(score >= 90){
-    score = "n A";
-  } else if (score < 60){
-    score = "n F";
-  } else {
-    score = [" B"," C"," D"][Math.floor((score / 10) - 6)];
-  }
-  return `you got a${score}`;
+  score = Math.floor((Math.min(Math.max(score, 50), 90) / 10) - 5);
+  let scoreString = ["n F", " D", " C", " B", "n A"][score];
+  return `you got a${scoreString}`;
 }
 
 
