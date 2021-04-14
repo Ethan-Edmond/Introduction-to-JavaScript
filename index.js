@@ -73,7 +73,7 @@ Do the following:
 function multiply(num1, num2){
   return num1 * num2;
 }
-
+multiply(5, 6);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
