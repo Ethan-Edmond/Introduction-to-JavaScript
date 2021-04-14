@@ -187,10 +187,13 @@ function game(user, computer){
   }
 
   // just playing golf
+
   // golf idea 1
-  if (user === computer) return "it's a tie";
-  let ary = [user, computer].map((a)=> ["rock", "scissors", "paper"].indexOf(a));
-  return (((((ary[1] - ary[0]) % 3) + 3) % 3) === 1) ? "you win!" : "you lose!";
+
+  // if (user === computer) return "it's a tie";
+  // let ary = [user, computer].map((a)=> ["rock", "scissors", "paper"].indexOf(a));
+  // return (((((ary[1] - ary[0]) % 3) + 3) % 3) === 1) ? "you win!" : "you lose!";
+
 }
 
 
@@ -275,9 +278,10 @@ function grade(score){
   }
 
   // just playing golf
-  score = Math.floor((Math.min(Math.max(score, 50), 90) / 10) - 5);
-  let scoreString = ["n F", " D", " C", " B", "n A"][score];
-  return `you got a${scoreString}`;
+
+  // score = Math.floor((Math.min(Math.max(score, 50), 90) / 10) - 5);
+  // let scoreString = ["n F", " D", " C", " B", "n A"][score];
+  // return `you got a${scoreString}`;
 }
 
 
@@ -304,7 +308,8 @@ function vowelCounter(inputString) {
   return counter;
 
   // just playing golf
-  return inputString.toLowerCase().split("").reduce((a,b) => a + 'aeiou'.includes(b),0);
+
+  // return inputString.toLowerCase().split("").reduce((a,b) => a + 'aeiou'.includes(b),0);
 }
 
 
