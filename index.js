@@ -295,13 +295,13 @@ Using the vowelCounter function below do the following:
 
 
 function vowelCounter(inputString) {
-  // for (let character of inputString.toLowerCase()){
-  //   if ('aeiou'.includes(character)){
-  //     counter++;
-  //   }
-  // }
-  // return counter;
-  // let counter = 0;
+  let counter = 0;
+  for (let character of inputString.toLowerCase()){
+    if ('aeiou'.includes(character)){
+      counter++;
+    }
+  }
+  return counter;
 
   // just playing golf
   return inputString.toLowerCase().split("").reduce((a,b) => a + 'aeiou'.includes(b),0);
